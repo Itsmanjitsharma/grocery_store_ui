@@ -168,7 +168,7 @@ export const serviceMenu =[
         }]
     }
 ]
-export const API_BASE_URL = 'http://localhost:8081';
+export const API_BASE_URL = 'http://localhost:8080';
 
 export const customerAddServiceUrl = `${API_BASE_URL}/api/customers/add`;
 export const inventoryAddServiceUrl = `${API_BASE_URL}/addInventory`;

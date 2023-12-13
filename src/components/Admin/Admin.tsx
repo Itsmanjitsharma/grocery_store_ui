@@ -2,7 +2,7 @@ import { GridColDef, GridRenderCellParams, GridTreeNodeWithRender } from '@mui/x
 import './Admin.scss';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { addAdminUserUrl, deleteAdminUserUrl, getAdminUsersUrl, updateAdminUserUrl, updateRowServiceUrl } from '../../data'; // Adjust the path according to the file location
+import { addAdminUserUrl, deleteAdminUserUrl, getAdminUsersUrl, updateAdminUserUrl } from '../../data'; // Adjust the path according to the file location
 import DataTable from '../DataTable/DataTable';
 let uniqueIdCounter = 0; // Initialize a counter variable outside the component
 
@@ -238,9 +238,6 @@ const Admin = () => {
 }
 export default Admin;
 
-function uuidv4() {
-    throw new Error('Function not implemented.');
-}
 const generateUniqueId = () => {
     // Increment the counter and return the next unique ID
     uniqueIdCounter += 1;
