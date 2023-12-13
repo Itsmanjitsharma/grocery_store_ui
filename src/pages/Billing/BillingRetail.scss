@@ -1,0 +1,91 @@
+@import "../../styles/variables.scss";
+.billingRetail {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  .inputHeadersbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .item {
+      margin-right: 10px;
+      /* Add margin to separate inputs */
+      input {
+        padding: 10px 5px;
+        background-color: transparent;
+        color: white;
+        outline: none;
+        border: 1px solid $soft-color;
+        border-radius: 3px;
+      }
+      .react-select-container {
+        width: 300px; /* Set the fixed width to 200px */
+        input {
+          padding: 10px 5px;
+          background-color: #2a3447;
+          color: white;
+          outline: none;
+          border: 1px solid #2a3447; /* Set the border color */
+          border-radius: 3px;
+        }
+        .react-select__control {
+          background-color: #2a3447; /* Set the background color */
+          border: 1px solid #2a3447;
+        }
+        .react-select__single-value,
+        .react-select__value-container,
+        .react-select__option {
+          color: white; /* Set text color for selected value and options */
+        }
+        .react-select__option--is-focused {
+          background-color: #394a60; /* Set background color for focused option */
+        }
+        .react-select__option--is-selected {
+          background-color: #394a60; /* Set background color for selected option */
+        }
+        .react-select__option--is-focused.react-select__option--is-selected {
+            background-color: #394a60; /* Set background color for focused and selected option */
+          }
+      }
+    }
+    .button {
+      margin-left: 5px;
+      padding: 10px 5px;
+      width: 200px;
+      /* Add margin to separate the button from inputs */
+    }
+  }
+  .middleBox {
+    margin: 0;
+    padding: 0;
+    .dataGrid {
+      background: white;
+      padding: 20px;
+      min-height: 500px;
+      height: 120vh;
+      .MuiDataGrid-toolbarContainer {
+        display: flex;
+        flex-direction: row-reverse;
+      }
+    }
+  }
+  .bottomBar {
+    background-color: $main-bg;
+    padding: 16px;
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .inputboxandbutton {
+      input {
+        padding: 10px;
+      }
+      button {
+        padding: 10px;
+      }
+    }
+  }
+}

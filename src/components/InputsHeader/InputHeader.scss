@@ -1,0 +1,25 @@
+@import "../../styles/variables.scss";
+.inputHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .item {
+        margin-right: 10px;
+
+        /* Add margin to separate inputs */
+        input {
+            padding: 10px 5px;
+            background-color: transparent;
+            color: white;
+            outline: none;
+            border: 1px solid $soft-color;
+            border-radius: 3px;
+        }
+    }
+    .button {
+        margin-left: 5px;
+        padding: 8px 5px;
+        /* Add margin to separate the button from inputs */
+    }
+}

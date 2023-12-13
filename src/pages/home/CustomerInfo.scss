@@ -1,0 +1,20 @@
+.CustomerInfo{
+    .CustomerInfoDataGrid{
+        background: white;
+
+        .MuiDataGrid-toolbarContainer{
+          flex-direction: row-reverse;
+        }
+        .MuiDataGrid-colCell {
+          text-align: center;
+        }
+        
+        .MuiDataGrid-cell {
+          text-align: center;
+        }
+    }
+    
+    .css-kzyyzb-MuiDataGrid-root{
+        height: 150vh;
+      }
+}

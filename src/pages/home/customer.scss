@@ -1,0 +1,29 @@
+/* App.scss */
+.customer{
+    .css-kzyyzb-MuiDataGrid-root{
+        background: white;
+        min-height: 120vh;
+        width: 100%;
+        .MuiDataGrid-toolbarContainer{
+            display: flex;
+            flex-direction: row-reverse;
+        }
+    }
+    .MuiDataGrid-cellContent{
+        cursor: pointer;
+    }
+    .css-qvtrhg-MuiDataGrid-virtualScroller{
+        overflow: hidden;
+    }
+    .customer_info{
+       display: flex;
+       align-items: center;
+       gap: 20px;
+       margin-bottom: 20px;
+
+       button{
+        padding: 5px;
+        cursor: pointer;
+       }
+    }
+}

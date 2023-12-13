@@ -1,0 +1,15 @@
+.inventorySummery{
+
+    .inventorySummeryDataGrid{
+        background: white;
+        min-height: 120vh;
+        width: 100%;
+        .MuiDataGrid-toolbarContainer{
+            display: flex;
+            flex-direction: row-reverse;
+        }
+    }
+    .css-kzyyzb-MuiDataGrid-root{
+        height: 150vh;
+      }
+}

@@ -1,0 +1,119 @@
+.authcontainer {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
+    grid-template-areas: "signUp signIn";
+  }
+  
+  .signUp {
+    grid-area: signUp;
+    background-color: white;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .signUp label {
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+  
+  .signUp input,
+  .signUp button {
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    display: block;
+    border: none;
+    outline: none;
+    border: 1px solid black;
+    background-color: aliceblue;
+  }
+  
+  .signUp button {
+    //background-color: #ff4b2b;
+    background-color: #2a3447;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    width: 200px;
+    border-radius: 20px;
+  }
+  
+  .signUp button:hover {
+    //background-color: #ff228c;
+    background-color: #2a3447;
+  }
+  
+  .signUp p {
+    text-align: center;
+  }
+  
+  .signIn {
+    grid-area: signIn;
+    //background: linear-gradient(to right, #ff4b28, #ff228c);
+    background-color: #2a3447;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+  }
+  .innnerSignIn {
+    display: flex;
+    flex-direction: column;
+    top: 25%;
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    justify-content: center;
+    align-items: center;
+  }
+  .innnerSignIn h1 {
+    color: #fff;
+    margin: 0px 0px 5px 0px;
+    padding: 0;
+  }
+  .innnerSignIn p {
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 40px;
+  }
+  .innnerSignIn button {
+    width: 100%;
+    height: 100%;
+    padding: 20px 60px;
+    border-radius: 30px;
+    border: 2px solid white;
+    //background: linear-gradient(to right, #ff4b28, #ff228c);
+    background:#2a3447;
+    color: #fff;
+  }
+  .innnerSignIn button:hover {
+    cursor: pointer;
+  }
+  
+  .innersignUp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .icons {
+    display: flex;
+    padding-left: 30px;
+  }
+  .signInPart{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+  }
+  .signInPart input{
+      border: 1px solid black;
+      background-color: aliceblue;
+  }
