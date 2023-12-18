@@ -35,13 +35,20 @@ const Inventory = () =>{
 
     },
     {
+        field: 'stockValue',
+        headerName: 'Stock Value',
+        //width: 80,
+        flex:1,
+        type: 'number',
+        editable:true,
+    },
+    {
       field: 'purchaseCost',
       headerName: 'Purchage Cost',
       //width: 150,
       flex:1,
       type: 'number',
       editable:true,
-
     },
     {
       field: 'sellCost',
@@ -58,6 +65,10 @@ const Inventory = () =>{
       //width: 110,
       flex:1,
       editable:true,
+    },{
+      field: 'unitType',
+      headerName: 'Unit Type',
+      flex:1,
     },{
       field: 'partyName',
       headerName: 'Party Name',
@@ -100,9 +111,7 @@ const Inventory = () =>{
 
   const handleDeleteRow = (_id: any, productName: any) => {
     axios
-      //.delete(`http://localhost:8080/deleteRow/${productName}`, {
         .delete(`${deleteRowServiceUrl}${productName}`, {
-       // data: { productName }, // Pass the product name in the request body
       })
       .then((response) => {
         if (response.status === 200) {
@@ -127,14 +136,12 @@ const Inventory = () =>{
     };
 
     axios
-      //.put("http://localhost:8080/updateRow", updatedRowData,{headers: {
       .put(updateRowServiceUrl, updatedRowData,{headers: {
         'Content-Type': 'application/json',
       },
     })
       .then((response) => {
         if (response.status === 200) {
-          // The row was successfully updated. You can fetch the updated data if needed.
           fetchUpdatedData();
         } else {
           console.error("Failed to update the row.");
@@ -147,7 +154,6 @@ const Inventory = () =>{
 
   const fetchUpdatedData = () => {
     axios
-      //.get("http://localhost:8080/getInventeryInfo")
       .get(inventoryInfoServiceUrl)
       .then((response) => {
         if (response.status === 200) {
@@ -169,6 +175,9 @@ const Inventory = () =>{
   useEffect(() => {
     fetchUpdatedData();
   }, []);
+  const handleRefreshData = () => {
+    fetchUpdatedData(); // Refresh the data in the Inventory component
+  };
   return(
       <div className="users">
         <div className="info">
@@ -181,9 +190,13 @@ const Inventory = () =>{
       onRowEdit={handleEditRow} // Pass the edit handler
       getRowId={function (_row: { id: any; }) {
         throw new Error('Function not implemented.');
-      } }        />
+      }}/>
        {
-        open && (<Add slug="user" columns={columns} setOpen={setOpen}/>)
+        open && (<Add slug="user" 
+        columns={columns}
+        setOpen={setOpen}
+        refreshData={handleRefreshData} // Pass the function here
+        />)
        }  
       </div>
     )

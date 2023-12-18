@@ -55,7 +55,7 @@ const CustomerForm: React.FC = () => {
     }
   ];
 
-  useEffect(() => {
+  /*useEffect(() => {
     axios.get(getAllCustomerServiceUrl)
       .then((response) => {
         const customersWithIds: Customer[] = response.data.map((customer: Customer, index: number) => ({
@@ -67,7 +67,27 @@ const CustomerForm: React.FC = () => {
       .catch((error) => {
         console.error(error);
       });
+  }, []);*/
+  const fetchCustomers = () => {
+    axios.get(getAllCustomerServiceUrl)
+      .then((response) => {
+        const customersWithIds: Customer[] = response.data.map((customer: Customer, index: number) => ({
+          ...customer,
+          id: index + 1,
+        }));
+        setRows(customersWithIds);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+  
+  useEffect(() => {
+    fetchCustomers();
   }, []);
+  const handleRefreshData = () => {
+    fetchCustomers(); // Refresh the data in the Inventory component
+  };
 
   return (
     <div className="customer">
@@ -78,7 +98,9 @@ const CustomerForm: React.FC = () => {
       <DataTable columns={columns} rows={rows} getRowId={function (_row: { id: any; }) {
         throw new Error('Function not implemented.');
       } }/>
-      {open && <Add_Customer slug="user" columns={columns} setOpen={setOpen} />}
+      {open && <Add_Customer slug="user" columns={columns} setOpen={setOpen} 
+              refreshData={handleRefreshData} // Pass the function here
+              />}
     </div>
   );
 };

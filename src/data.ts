@@ -36,14 +36,14 @@ export const adminMenu =[
             {
                 id:1,
                 title:"Billing Retail",
-                url:"/BillingRetail",
-                path:"/BillingRetail",
+                url:"/billingRetail/:customerName",
+                path:"/billingRetail/:customerName",
                 icon:"home.svg",
             },{
                 id:2,
                 title:"Billing Wholesale",
-                url:"/BillingWholesale",
-                path:"/BillingWholesale",
+                url:"/billingWholesale/:customerName",
+                path:"/billingWholesale/:customerName",
                 icon:"home.svg",
             },
             {
@@ -103,8 +103,8 @@ export const adminMenu =[
             {
                 id:1,
                 title:"LOGOUT",
-                url:"/Logout",
-                path:"/Logout",
+                url:"/login",
+                path:"/login",
                 icon:"home.svg",
             }
         ]
@@ -120,14 +120,14 @@ export const serviceMenu =[
             {
                 id:1,
                 title:"Billing Retail",
-                url:"/BillingRetail",
-                path:"/BillingRetail",
+                url:"/billingRetail/:customerName",
+                path:"/billingRetail/:customerName",
                 icon:"home.svg",
             },{
                 id:2,
                 title:"Billing Wholesale",
-                url:"/BillingWholesale",
-                path:"/BillingWholesale",
+                url:"/billingWholesale/:customerName",
+                path:"/billingWholesale/:customerName",
                 icon:"home.svg",
             },
             {
@@ -162,8 +162,8 @@ export const serviceMenu =[
         listItems:[{
         id:1,
         title:"Logout",
-        url:"/Logout",
-        path:"/Logout",
+        url:"/login",
+        path:"/login",
         icon:"home.svg",
         }]
     }

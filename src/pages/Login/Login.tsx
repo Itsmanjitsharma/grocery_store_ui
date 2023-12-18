@@ -64,7 +64,7 @@ const Login = () => {
                 throw new Error("Function not implemented.");
               }
             });
-            
+            localStorage.setItem('isAuthenticated', 'true');
             if (response.data.authenticated && response.data.userRole === 'admin') {
               navigate("/Dashboard");
             } else if(response.data.authenticated && response.data.userRole === 'user'){
@@ -73,6 +73,7 @@ const Login = () => {
               // Handle failed authentication
               alert("Authentication failed");
               console.error("Authentication failed");
+              localStorage.setItem('isAuthenticated', 'false');
             }
           })
           .catch((error) => {

@@ -239,7 +239,6 @@ const Admin = () => {
 export default Admin;
 
 const generateUniqueId = () => {
-    // Increment the counter and return the next unique ID
     uniqueIdCounter += 1;
-    return uniqueIdCounter.toString(); // Convert to string if required
+    return uniqueIdCounter.toString();
 };

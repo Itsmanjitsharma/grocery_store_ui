@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { customerAddServiceUrl } from '../../data'; // Adjust the path according to the file location
 
 type Props = {
+  refreshData(): unknown;
   slug: string,
   columns: GridColDef[],
   setOpen: React.Dispatch<React.SetStateAction<boolean>>,
@@ -94,10 +95,14 @@ const Add_Customer = (props: Props) => {
         });
     }
   };
+  const handleRefreshAndClose = () => {
+    props.setOpen(false); // Close the modal
+    props.refreshData(); // Trigger a refresh of data in the Inventory component
+  };
   return (
     <div className='add'>
       <div className='model'>
-        <span className='close' onClick={() => props.setOpen(false)}>X</span>
+        <span className='close' onClick={handleRefreshAndClose}>X</span>
         <h2>Add new {props.slug}</h2>
         <form onSubmit={handleSubmit}>
           {props.columns

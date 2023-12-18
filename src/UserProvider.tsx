@@ -32,12 +32,16 @@ export function UserProvider({ children }) {
     setIsAuthenticated(true);
     setUserRole(userData.userRole);
     setUsername(userData.username);
+    localStorage.setItem("auth",'true'); 
+    localStorage.setItem("role",userData.userRole.toString());
   };
 
   const logout = () => {
     setIsAuthenticated(false);
     setUserRole(null);
     setUsername(null);
+    localStorage.removeItem('auth');
+    localStorage.removeItem('role');
   };
 
   const contextValue = {
