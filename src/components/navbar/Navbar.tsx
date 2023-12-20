@@ -4,7 +4,7 @@ const Navbar = () =>{
       <div className="navbar">
         <div className="logo">
             <img src='logo.svg' alt=''/>
-            <span>I am Admin</span>
+            <span>I am {localStorage.getItem('role') || 'default role'}</span>
         </div>
         <div className="icons">
             <img src="/search.svg" alt="" className="icon" />
@@ -16,7 +16,7 @@ const Navbar = () =>{
             </div>
             <div className="user">
                 <img src="https://t4.ftcdn.net/jpg/01/35/97/83/360_F_135978399_qplk3WPu7JOA63JPCYVy1fb7MI4nefAL.jpg" alt="" />
-                <span>Manjit Sharma</span>
+                <span>{localStorage.getItem('role')}</span>
             </div>
             <img src="/setting.svg" alt="" className="icon" />
         </div>

@@ -28,8 +28,8 @@ interface StateObject {
 const BillingRetail : React.FC = () => {
   const nameOfCustomer = useParams<{ customerName: string }>();
   const [products, setProducts] = useState<{ value: string; label: string; sellCost: string; wholesaleCost: string; quantityInStock: string; }[]>([]);
-  const [paymentMethod, setPaymentMethod] = useState('');
-  const [paymentStatus, setPaymentStatus] = useState('');
+  const [paymentMethod, setPaymentMethod] = useState('Cash');
+  const [paymentStatus, setPaymentStatus] = useState('Paid');
   const [customerName, setCustomerName] = useState('');
   const [billingDate] = useState(new Date());
   const [billingType] = useState('Retail');

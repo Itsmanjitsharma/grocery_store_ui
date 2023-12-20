@@ -74,6 +74,12 @@ const Inventory = () =>{
       headerName: 'Party Name',
       flex:1,
       editable:true,
+    },{
+      field: 'minimumQuantity',
+      headerName: 'Minimum Quantity',
+      flex:1,
+      type:'number',
+      editable:true,
     },
     {
       field: 'actions',
@@ -133,6 +139,7 @@ const Inventory = () =>{
       purchaseCost: row.purchaseCost || 0.0, // Use 0.0 if purchaseCost is undefined or null
       sellCost: row.sellCost || 0.0, // Use 0.0 if sellCost is undefined or null
       wholesaleCost: row.wholesaleCost || 0.0, // Use 0.0 if wholesaleCost is undefined or null
+      minimumQuantity: row.minimumQuantity || 0.0,
     };
 
     axios
@@ -178,13 +185,15 @@ const Inventory = () =>{
   const handleRefreshData = () => {
     fetchUpdatedData(); // Refresh the data in the Inventory component
   };
+  const hiddenColumns = ['partyName','stockValue'];
+  const filteredColumns = columns.filter(column => !hiddenColumns.includes(column.field));
   return(
       <div className="users">
         <div className="info">
           <h2>Inventory</h2>
           <button onClick={()=>setOpen(true)}>Add New Product</button>
         </div>
-        <DataTable columns={columns}
+        <DataTable columns={filteredColumns}
       rows={rows}
       onRowDelete={handleDeleteRow}
       onRowEdit={handleEditRow} // Pass the edit handler

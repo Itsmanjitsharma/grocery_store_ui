@@ -17,7 +17,18 @@ import Admin from './components/Admin/Admin';
 import { useEffect, useState } from 'react';
 function PrivateRoute({ element, isAuthenticated, userRole, allowedRoles }) {
   if (isAuthenticated && allowedRoles.includes(userRole)) {
-    return element;
+    const routePath = window.location.pathname;
+    const requiresCustomerName = routePath && routePath.includes('/:customerName'); // Check if routePath exists before using includes
+    if (requiresCustomerName) {
+      const parts = window.location.pathname.split('/');
+      const customerName = parts[parts.length - 1]; // Extract the last part of the URL
+      if (customerName && customerName !== ':customerName') {
+        return element;
+      }
+    } else {
+      return element;
+    }
+    //return element;
   } else {
     isAuthenticated = localStorage.getItem('isAuthenticated') === 'true';
     userRole = localStorage.getItem('role');
@@ -105,7 +116,7 @@ function App() {
             }
           />
           <Route
-            path="/billingRetail/:customerName"
+            path='/billingRetail/:customerName'
             element={
               <PrivateRoute
                 element={<BillingRetail />}
@@ -116,7 +127,7 @@ function App() {
             }
           />
           <Route
-            path="/billingWholesale/:customerName"
+            path='/billingWholesale/:customerName'
             element={
               <PrivateRoute
                 element={<BillingWholesale />}

@@ -30,8 +30,8 @@ const BillingWholesale : React.FC = () => {
   
   const nameOfCustomer = useParams<{ customerName ?: string }>();
   const [products, setProducts] = useState<Product[]>([]);
-  const [paymentMethod, setPaymentMethod] = useState<string>('');
-  const [paymentStatus, setPaymentStatus] = useState<string>('');
+  const [paymentMethod, setPaymentMethod] = useState<string>('Cash');
+  const [paymentStatus, setPaymentStatus] = useState<string>('Paid');
   const [customerName, setCustomerName] = useState<string>('');
   const [billingDate] = useState<Date>(new Date());
   const [billingType] = useState<string>('Wholesale');

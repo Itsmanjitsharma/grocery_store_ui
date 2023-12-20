@@ -36,14 +36,14 @@ export const adminMenu =[
             {
                 id:1,
                 title:"Billing Retail",
-                url:"/billingRetail/:customerName",
-                path:"/billingRetail/:customerName",
+                url:'/billingRetail/:customerName',
+                path:'/billingRetail/:customerName',
                 icon:"home.svg",
             },{
                 id:2,
                 title:"Billing Wholesale",
-                url:"/billingWholesale/:customerName",
-                path:"/billingWholesale/:customerName",
+                url:'/billingWholesale/:customerName',
+                path:'/billingWholesale/:customerName',
                 icon:"home.svg",
             },
             {

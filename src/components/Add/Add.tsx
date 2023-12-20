@@ -62,7 +62,7 @@ const Add = (props: Props) => {
         <h2>Add new {props.slug}</h2>
         <form onSubmit={handleSubmit}>
           {props.columns
-            .filter(item => item.field !== 'id' && item.field !== 'img' && item.field !== 'actions')
+            .filter(item => item.field !== 'id' && item.field !== 'img' && item.field !== 'actions' && item.field !== 'minimumQuantity')
             .map(column => (
               <div className='item' key={column.field}>
                 <label>{column.headerName}</label>

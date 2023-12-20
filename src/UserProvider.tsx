@@ -34,6 +34,7 @@ export function UserProvider({ children }) {
     setUsername(userData.username);
     localStorage.setItem("auth",'true'); 
     localStorage.setItem("role",userData.userRole.toString());
+    localStorage.setItem("role",userData.username.toString());
   };
 
   const logout = () => {
